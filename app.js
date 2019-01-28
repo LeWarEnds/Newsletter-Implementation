@@ -32,11 +32,17 @@ app.post("/", function(req, res) {
   };
   var jsonData = JSON.stringify(data);
 
+  //API Key
+  var apiKey = "35d7522d2699d2410d4db426732e2633-us20";
+
+  //List ID
+  var listID = "458f8e91e5";
+
   var options = {
-    url: "https://us20.api.mailchimp.com/3.0/lists/458f8e91e5",
+    url: "https://us20.api.mailchimp.com/3.0/lists/" + process.env.listID,
     method: "POST",
     headers: {
-      "Authorization": "LeWarEnds 35d7522d2699d2410d4db426732e2633-us20"
+      "Authorization": "LeWarEnds " + process.env.apiKey
     },
     body: jsonData
   };
@@ -62,8 +68,5 @@ app.post("/failure", function(req, res) {
 app.listen(process.env.PORT || 3000, function(req, res) {
   console.log("Server running at Port: 3000");
 });
-//API Key
-//35d7522d2699d2410d4db426732e2633-us20
 
-//List ID
-//458f8e91e5
+// Add Procfile in order for Heroku to remeber
