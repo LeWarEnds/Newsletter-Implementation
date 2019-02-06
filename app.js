@@ -33,13 +33,13 @@ app.post("/", function(req, res) {
   var jsonData = JSON.stringify(data);
 
   //API Key
-  var apiKey = "35d7522d2699d2410d4db426732e2633-us20";
+  var apiKey = "API-KEY";
 
   //List ID
-  var listID = "458f8e91e5";
+  var listID = "LIST-ID";
 
   var options = {
-    url: "https://us20.api.mailchimp.com/3.0/lists/" + process.env.listID,
+    url: "https://usXX.api.mailchimp.com/3.0/lists/" + process.env.listID,
     method: "POST",
     headers: {
       "Authorization": "LeWarEnds " + process.env.apiKey
